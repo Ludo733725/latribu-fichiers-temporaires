@@ -1,0 +1,41 @@
+name: Extract project archives
+on:
+  push:
+    branches: [main, master]
+    paths-ignore:
+      - "sources/**"
+      - ".github/workflows/extract-archives.yml"
+permissions:
+  contents: write
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract ZIP files
+        run: |
+          set -e
+          mkdir -p sources
+          found=0
+          for archive in *.zip; do
+            [ -f "$archive" ] || continue
+            found=1
+            folder="sources/${archive%.zip}"
+            mkdir -p "$folder"
+            unzip -oq "$archive" -d "$folder"
+          done
+          if [ "$found" -eq 0 ]; then
+            echo "No ZIP archives found at repository root"
+            exit 1
+          fi
+      - name: Commit extracted files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sources
+          if git diff --cached --quiet; then
+            echo "No extracted file changes"
+          else
+            git commit -m "Extract uploaded project archives"
+            git push
+          fi

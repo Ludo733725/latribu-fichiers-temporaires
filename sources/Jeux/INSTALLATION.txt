@@ -1,0 +1,25 @@
+JEUX DE LA TRIBU — INSTALLATION PLESK
+
+1. Dans Plesk, ouvre le sous-domaine jeux.latribu.craftserv.fr.
+2. Ouvre Fichiers puis le répertoire racine du sous-domaine (normalement "jeux").
+3. Envoie le contenu de ce ZIP dans ce répertoire : index.php, style.css et .htaccess.
+4. Vérifie que PHP 8.0 ou supérieur est sélectionné dans les paramètres PHP du sous-domaine.
+5. Ouvre https://jeux.latribu.craftserv.fr
+
+PREMIÈRE CONNEXION
+- La première visite affiche la création du compte administrateur.
+- Identifiant administrateur : admin
+- Mot de passe : au moins 12 caractères.
+- Une fois connecté, utilise Administration pour créer les comptes des membres.
+- Les mots de passe des membres doivent contenir au moins 8 caractères.
+
+STOCKAGE
+Les données sont enregistrées automatiquement dans :
+../private/la-tribu-jeux/data.json
+Ce dossier est créé automatiquement à la première visite. Il est situé hors du répertoire public du site.
+
+IMPORTANT
+- Ne supprime pas le dossier private/la-tribu-jeux une fois créé : il contient les comptes et les scores.
+- Fais régulièrement une sauvegarde de ce dossier.
+- Les scores des mini-jeux sont plafonnés côté serveur, mais cette première version reste un jeu familial convivial et ne constitue pas une plateforme compétitive sécurisée contre la triche.
+- Les défis sont affichés comme objectifs familiaux ; le suivi automatique de leur progression pourra être ajouté dans une prochaine version.

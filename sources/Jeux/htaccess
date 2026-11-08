@@ -1,0 +1,4 @@
+Options -Indexes
+<FilesMatch "^(data\.json|README\.txt)$">
+    Require all denied
+</FilesMatch>

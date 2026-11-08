@@ -1,0 +1,16 @@
+LA TRIBU — PLESK, SANS MYSQL
+Cette archive contient :
+- httpdocs/la-tribu : le site
+- private/la-tribu-data : les données privées (hors web)
+
+Installation :
+1. Dans Plesk > Fichiers, place-toi à la racine de l'abonnement (au même niveau que httpdocs).
+2. Téléverse le ZIP à cet endroit et extrais-le à cet endroit.
+3. Vérifie que httpdocs/la-tribu/index.php existe ET que private/la-tribu-data est à côté de httpdocs, pas dedans.
+4. Active PHP 8.1 ou plus récent et HTTPS/SSL dans Plesk.
+5. Ouvre https://TON-DOMAINE/la-tribu/
+6. Crée le compte parent. Utilise un mot de passe unique et solide.
+7. Depuis le compte parent, ajoute les comptes des membres ; chacun se connectera sur son téléphone avec son propre identifiant.
+
+Les données sont conservées dans un fichier JSON hors du dossier public. Fais régulièrement une copie du dossier private/la-tribu-data.
+Si tu ne peux pas extraire l'archive à la racine de l'abonnement, arrête-toi et demande-moi : ne place surtout pas le dossier private dans httpdocs.

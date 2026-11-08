@@ -1,0 +1,3 @@
+Options -Indexes
+<FilesMatch "^(\.htaccess|.*\.php)$">
+</FilesMatch>

@@ -1,0 +1,31 @@
+INSTALLATION — PRÉSENTATION DE LA TRIBU
+
+1. Dans Plesk, crée le sous-domaine presentation.latribu.craftserv.fr.
+2. Choisis comme racine du document le dossier : presentation
+3. Envoie le contenu du dossier "presentation" de cette archive dans cette racine.
+   Tu dois y trouver index.php, photo.php, style.css et .htaccess.
+4. À côté du dossier public "presentation", crée un dossier "private" si nécessaire.
+5. Dans "private", crée "la-tribu-presentation".
+   La structure attendue est :
+   Répertoire principal/
+   ├── presentation/   (racine publique du sous-domaine)
+   └── private/
+       └── la-tribu-presentation/
+           └── photos/
+6. Copie le dossier "photos" fourni dans private/la-tribu-presentation/.
+7. Vérifie que PHP peut écrire dans private/la-tribu-presentation et dans son sous-dossier photos.
+8. Ouvre https://presentation.latribu.craftserv.fr
+9. Au premier accès, crée le mot de passe administrateur (12 caractères minimum).
+   L'identifiant administrateur est : admin.
+
+L'administrateur ajoute les fiches et crée les comptes des membres.
+Les comptes membres sont en lecture seule. Ils peuvent consulter les portraits,
+mais ne peuvent pas créer, modifier ou supprimer de fiches.
+
+Photos acceptées : JPG, PNG, WEBP, GIF, 5 Mo maximum.
+Aucune base MySQL n'est nécessaire : les données sont stockées en JSON
+dans le dossier privé, en dehors du répertoire public.
+
+Si le sous-domaine utilise une autre racine de document, adapte uniquement
+la configuration de la racine dans Plesk et conserve le dossier private
+comme dossier frère de la racine publique.

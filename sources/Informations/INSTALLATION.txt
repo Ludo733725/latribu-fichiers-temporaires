@@ -1,0 +1,25 @@
+La Tribu — Tableau d'informations
+
+Installation :
+1. Le répertoire racine du sous-domaine informations.latribu.craftserv.fr doit pointer vers le dossier public "informations" (ou le répertoire racine que tu as choisi dans Plesk).
+2. Copie le contenu du dossier "informations" (index.php, style.css, .htaccess) directement dans ce répertoire racine.
+3. Place le dossier "private/la-tribu-informations" dans le dossier private existant, à côté des dossiers privés des autres applications. Ne le place jamais dans le répertoire public.
+4. PHP doit avoir les droits de lecture et d'écriture sur private/la-tribu-informations. Le fichier data.json sera créé automatiquement.
+
+Première visite :
+- Ouvre https://informations.latribu.craftserv.fr
+- Crée le compte administrateur. Identifiant fixe : admin. Mot de passe : 12 caractères minimum.
+- Connecte-toi puis crée un compte pour chaque membre. Identifiants membres de 3 à 30 caractères ; mots de passe de 8 caractères minimum.
+
+Fonctionnalités :
+- Tous les comptes peuvent publier.
+- Chaque membre peut modifier et supprimer ses propres publications.
+- L'administrateur peut modifier/supprimer toutes les publications, épingler/désépingler les messages et gérer les comptes.
+- Catégories : Info, À retenir, Événement, Coup de main.
+- Stockage dans un fichier JSON, sans MySQL.
+
+Sécurité et limites :
+- Mots de passe hachés, sessions et jetons CSRF.
+- Les publications restent visibles même si le compte de leur auteur est supprimé.
+- Sauvegarde régulièrement private/la-tribu-informations.
+- Application familiale simple, non destinée à stocker des données sensibles.
